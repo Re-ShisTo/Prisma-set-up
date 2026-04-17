@@ -15,6 +15,7 @@ model Contact {
   name  String
   email String
   message String
+  subject String? @default("No subject")
   createdAt DateTime @default(now())
 }
 model Author{
