@@ -103,3 +103,35 @@ create database prisma2;
 ```js
 DATABASE_URL = "mysql://<user>:<passowrd>@localhost:<port>/<name>";
 ```
+
+5. Now install mysql adapter MariaDB in prisma.
+
+```bash
+npm install @prisma/adapter-mariadb mysql2
+```
+
+6. Delete the whole migrations folder and change the database db provider to "mysql". Then run prisma migrate for new migration changes.
+
+```bash
+npx prisma migrate dev --name switch_to_mysql
+```
+
+7. Load the PrismaMariadb from mariaDB adapter and define new url for the adapter.
+
+```js
+const { PrismaMariaDB } = require("@prisma/adapter-mariadb");
+const adapter = new PrismaMariaDB({
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "#CP77#7053R#",
+  database: "prisma2",
+});
+```
+
+8. Finally generate prisma and run the js file.
+
+```bash
+npx prisma generate
+node index.js
+```
