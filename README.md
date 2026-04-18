@@ -116,7 +116,7 @@ npm install @prisma/adapter-mariadb mysql2
 npx prisma migrate dev --name switch_to_mysql
 ```
 
-10. Load the PrismaMariadb from mariaDB adapter and define new url for the adapter.
+7. Load the PrismaMariadb from mariaDB adapter and define new url for the adapter.
 
 ```js
 const { PrismaMariaDB } = require("@prisma/adapter-mariadb");
@@ -129,7 +129,7 @@ const adapter = new PrismaMariaDB({
 });
 ```
 
-11. Finally generate prisma and run the js file.
+8. Finally generate prisma and run the js file.
 
 ```bash
 npx prisma generate
